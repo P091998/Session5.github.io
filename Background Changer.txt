@@ -1,0 +1,110 @@
+//HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+    <link rel="stylesheet" href="Time.css"> 
+</head>
+<body>
+    <div class="container">
+        <span id="hours"></span>
+        <span id="col">:</span>
+        <span id="minutes"></span>
+        <span id="col">:</span>
+        <span id="seconds"></span>
+        <span id="session"></span>
+    </div>
+    <button id="btn">Dark</button>
+    <script src="Time.js"></script>
+</body>
+</html>
+
+
+
+//CSS
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 30px;
+    color: cornflowerblue;
+    font-weight: bolder;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    font-size: 100px;
+    white-space: nowrap;
+}
+#btn{
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: aqua;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    transform: translate(650px,500px);
+}
+#btn:hover{
+    color: red;
+    cursor: pointer;
+}
+
+
+
+
+//JS
+
+function displayTime()
+{
+    var dateTime=new Date();
+    var hrs=dateTime.getHours();
+    var min=dateTime.getMinutes();
+    var sec=dateTime.getSeconds();
+    var session=document.getElementById('session');
+
+    if(hrs >= 12)
+    {
+        session.innerHTML = 'PM';
+    }
+    else
+    {
+        session.innerHTML = 'AM';
+    }
+
+    if(hrs > 12)
+    {
+        hrs=hrs-12;
+    }
+
+    document.getElementById('hours').innerHTML = hrs;
+    document.getElementById('minutes').innerHTML = min;
+    document.getElementById('seconds').innerHTML = sec;
+}
+
+setInterval(displayTime,1000);
+
+const bt = document.getElementById('btn') ; 
+bt.addEventListener('click' , (e) => { 
+     if ( bt.innerHTML=='DARK'){ 
+        document.body.style.backgroundColor ='black' ;
+          
+        bt.innerHTML = 'LIGHT' ;
+     }
+    else{ 
+        document.body.style.backgroundColor ='white' ;
+       
+        bt.innerHTML = 'DARK' ;
+     }
+});
