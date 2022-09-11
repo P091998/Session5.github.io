@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 30px;
+    color: cornflowerblue;
+    font-weight: bolder;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    font-size: 100px;
+    white-space: nowrap;
+}
+#btn{
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: aqua;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    transform: translate(650px,500px);
+}
+#btn:hover{
+    color: red;
+    cursor: pointer;
+}
